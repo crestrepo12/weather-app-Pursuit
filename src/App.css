@@ -19,7 +19,6 @@ section.weekly-forecast {
 article.day-forecast {
   width: 120px;
   height: 200px;
-  border: solid black 1px;
   margin: 20px 0 20px 0;
   padding: 10px;
   display: flex;
