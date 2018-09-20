@@ -21,6 +21,13 @@ article.day-forecast {
   height: 200px;
   border: solid black 1px;
   margin: 20px 0 20px 0;
-  text-align: center;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+img {
+  margin: 0 auto;
 }

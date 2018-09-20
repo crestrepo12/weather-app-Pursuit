@@ -33,18 +33,14 @@ class Forecast extends Component {
   }
 
   retrieveTemp = e => {
-      this.setState({
-          maxTempF: e.target.value,
-          minTempF: e.target.value
-      })
-  }
+    this.setState({
+      maxTempF: e.target.value,
+      minTempF: e.target.value
+    });
+  };
 
   render() {
     const { weekForecast } = this.state;
-    const iconStyle ={
-        width: '100px',
-        height: '100px'
-    }
 
     return (
       <section className="weekly-forecast">
@@ -52,9 +48,22 @@ class Forecast extends Component {
           return (
             <article className="day-forecast" key={dayForecast.timestamp}>
               <div className="date">{dayForecast.dateTimeISO.slice(0, 10)}</div>
-              <img src={`./assets/${dayForecast.icon}`} alt={dayForecast.weather} style={{iconStyle}}/>
-              <div value={dayForecast.maxTempF} name="maxTempF">High: {dayForecast.maxTempF} </div>
-              <div value={dayForecast.minTempF} name="minTempC">Low: {dayForecast.minTempF} </div>
+
+              <img
+                src={`./assets/${dayForecast.icon}`}
+                alt={dayForecast.weather}
+                width="55"
+                height="55"
+              />
+
+              <div className="temperature">
+              <div value={dayForecast.maxTempF} name="maxTempF">
+                High: {dayForecast.maxTempF}{" "}
+              </div>
+              <div value={dayForecast.minTempF} name="minTempC">
+                Low: {dayForecast.minTempF}{" "}
+              </div>
+              </div>
             </article>
           );
         })}
